@@ -9,18 +9,18 @@
     <title>Sports Complex</title>
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="header">
         <nav>
-            <a href="index.html"><img src="./images/logo.png" id="logo" alt="SportsComplexLOGO" width="100px" height="100px"></a>
-            <div class="nav-links">
-                <!-- <i class="fa-solid fa-hockey-sticks"></i> -->
+            <a href="index.html"><img src="./images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa-solid fa-xmark" id="hamIcon" onclick="toggleHide()"></i>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#about">About Us</a></li>
                 </ul>
-                <!-- <i class="fa-solid fa-baseball"></i> -->
             </div>
+            <i class="fa-solid fa-bars" id="hamIcon" onclick="toggleShow()"></i>
         </nav>
 
         <div class="text-box">
@@ -28,6 +28,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quisquam ipsum facilis esse eveniet voluptates. <br> Mollitia ullam expedita itaque esse omnis inventore debitis ducimus obcaecati sit, iste et minus tenetur.</p>
             <a href="" class="hero-btn">Expore Now &nbsp; &#8594;</a>
         </div>
+
+        <a id="top__scroll" href="#header"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
    
     <section class="main">
@@ -35,29 +37,29 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, perferendis. Soluta quod ad, quaerat maiores perferendis laudantium aspernatur, veritatis voluptate aperiam molestiae accusamus officiis ipsam nostrum cupiditate impedit iure sunt.</p>
     </section>
 
-    <div class="row">
-        <div class="card">
-            <img src="./images/cricket.jpg" alt="cricket" class="card__image">
-            <div class="card__text">
-                <h3 class="card__title">Cricket Ground</h3>
+    <div class="games__section">
+        <div class="img-container">
+            <img src="./images/cricket.jpg" alt="cricket">
+            <div class="img-content">
+                <h3>Cricket Ground</h3>
             </div>
         </div>
-        <div class="card">
-            <img src="./images/football.jpg" alt="football" class="card__image">
-            <div class="card__text">
-                <h3 class="card__title">Football Ground</h3>
+        <div class="img-container">
+            <img src="./images/football.jpg" alt="football">
+            <div class="img-content">
+                <h3>Football Ground</h3>
             </div>
         </div>
-        <div class="card">
-            <img src="./images/badminton.jpg" alt="badminton" class="card__image">
-            <div class="card__text">
-                <h3 class="card__title">Badminton Court</h3> 
+        <div class="img-container">
+            <img src="./images/badminton.jpg" alt="badminton">
+            <div class="img-content">
+                <h3>Badminton Court</h3> 
             </div>
         </div>
     </div>
 
     <section id="contact">
-        <a href="" class="hero-btn">CONTACT US 📞</a>
+        <a href="" class="hero-btn">CONTACT US &nbsp; <i class="fa-solid fa-phone"></i></a>
     </section>
 
     <section class="footer">
@@ -69,5 +71,33 @@
         <i class="fa-brands fa-github"></i>
         <p> &#169; Ayush Pun</p>
     </section>
+
+    <!-- Toggle Side Navbar -->
+    <script>
+        
+        var navLinks = document.getElementById("nav-links");
+        var topScroll = document.getElementById("top__scroll");
+
+        function toggleShow() {
+            navLinks.style.right = "0";  
+        }
+        function toggleHide() {
+            navLinks.style.right = "-250px";
+        }
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+        function scrollFunction() { 
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    navLinks.style.right = "-250px";
+                    topScroll.style.transform= "translateX(0%)";
+            }
+            else {
+                topScroll.style.transform= "translateX(150%)";
+            }
+        }
+    </script>
+
 </body>
 </html>
