@@ -26,10 +26,10 @@
         <div class="text-box">
             <h1>World's Biggest Sports Complex</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quisquam ipsum facilis esse eveniet voluptates. <br> Mollitia ullam expedita itaque esse omnis inventore debitis ducimus obcaecati sit, iste et minus tenetur.</p>
-            <a href="" class="hero-btn">Expore Now &nbsp; &#8594;</a>
+            <a href="./html/explore.html" class="hero-btn">Expore Now &nbsp; &#8594;</a>
         </div>
 
-        <a id="top__scroll" href="#header"><i class="fa-solid fa-arrow-up"></i></a>
+        <a id="top__scroll" href="#header">&nbsp;<i class="fa-solid fa-arrow-up"></i>&nbsp;</a>
     </div>
    
     <section class="main">
@@ -41,25 +41,45 @@
         <div class="img-container">
             <img src="./images/cricket.jpg" alt="cricket">
             <div class="img-content">
-                <h3>Cricket Ground</h3>
+                <a href="./html/cricket.html">Cricket Ground</a>
             </div>
         </div>
         <div class="img-container">
             <img src="./images/football.jpg" alt="football">
             <div class="img-content">
-                <h3>Football Ground</h3>
+                <a href="./html/football.html">Football Ground</a>
             </div>
         </div>
         <div class="img-container">
             <img src="./images/badminton.jpg" alt="badminton">
             <div class="img-content">
-                <h3>Badminton Court</h3> 
+                <a href="./html/badminton.html">Badminton Court</a> 
             </div>
         </div>
     </div>
 
+    <div class="modal_container" id="modal_container">
+        <div class="modal">
+            <form action="#">
+                   <div class="contact-container">
+                        <div class="contact-img">
+                            <img src="./images/swimming.jpg">
+                        </div>
+                        <div class="form-container">
+                            <h2>Contact Us</h2>
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <textarea placeholder="Type Your Message Here" name="" id="" cols="30" rows="10"></textarea>
+                            <button type="submit" class="btn btn-grey">Submit</button>
+                        </div>
+                   </div>
+            </form>
+            <button id="close_btn"><i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+    </div>
+
     <section id="contact">
-        <a href="" class="hero-btn">CONTACT US &nbsp; <i class="fa-solid fa-phone"></i></a>
+        <a href="" class="hero-btn" id="contact_btn">CONTACT US &nbsp; <i class="fa-solid fa-phone"></i></a>
     </section>
 
     <section class="footer">
@@ -72,9 +92,9 @@
         <p> &#169; Ayush Pun</p>
     </section>
 
-    <!-- Toggle Side Navbar -->
     <script>
         
+        // Toggle Side Navbar and top down scroll
         var navLinks = document.getElementById("nav-links");
         var topScroll = document.getElementById("top__scroll");
 
@@ -91,12 +111,26 @@
         function scrollFunction() { 
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                     navLinks.style.right = "-250px";
-                    topScroll.style.transform= "translateX(0%)";
+                    topScroll.style.transform= "translateX(-10%)";
             }
             else {
                 topScroll.style.transform= "translateX(150%)";
             }
         }
+
+        // Modal toggle
+        const modalContainer = document.getElementById("modal_container");
+        const contactBtn = document.getElementById("contact_btn");
+        const closeBtn = document.getElementById("close_btn");
+
+        contactBtn.addEventListener('click', () => {
+            event.preventDefault();
+            modalContainer.classList.add('show');
+        })
+
+        closeBtn.addEventListener('click', () => {
+            modalContainer.classList.remove('show');
+        })
     </script>
 
 </body>
