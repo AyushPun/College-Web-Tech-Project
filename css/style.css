@@ -70,6 +70,7 @@ nav {
   color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .nav-links ul li::after {
@@ -430,6 +431,7 @@ nav {
   font-size: 2rem;
 }
 
+/* top scroll */
 #top__scroll {
     position: fixed;
     right: 0;
@@ -449,7 +451,6 @@ nav {
 }
 
 #top__scroll i {
-  transform: rotate(180deg);
   transition: 0.5s;
 }
 #top__scroll:hover i{
