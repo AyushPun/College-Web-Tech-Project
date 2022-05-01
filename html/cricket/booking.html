@@ -11,6 +11,195 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
         
+        /* header background styling  */
+        header {
+          min-height: 100vh;
+          width: 100%;
+          background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+            url(../../images/booking.jpg);
+          background-position: center;
+          background-size: cover;
+          background-attachment: fixed;
+          position: relative;
+        }
+
+        /* Typewriter styling */
+        .typewriter {
+          margin-top: 7rem;
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        
+        .typewriter h1 {
+            
+            color: #fff;
+            width: fit-content;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(60, end),
+                blink-caret .5s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
+
+        /* booking table  */
+        .booking__container {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-top: 3rem;
+        }
+
+        .responsive-table .table-row{
+          animation: fadeIn 1s linear;
+          animation-fill-mode: both;
+        }
+
+        .responsive-table .table-header{
+          animation: fadeIn 0.5s linear;
+          animation-fill-mode: both;
+          animation-delay: 0.2s;
+        }
+
+        .table-row:nth-child(1) {
+          animation-delay: 0.2s;
+        }
+        .table-row:nth-child(2) {
+          animation-delay: 0.3s;
+        }
+        .table-row:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        .table-row:nth-child(4) {
+          animation-delay: 0.5s;
+        }
+        .table-row:nth-child(5) {
+          animation-delay: 0.6s;
+        }
+        .table-row:nth-child(6) {
+          animation-delay: 0.7s;
+        }
+        .table-row:nth-child(7) {
+          animation-delay: 0.8s;
+        }
+        .table-row:nth-child(8) {
+          animation-delay: 0.9s;
+        }
+        .table-row:nth-child(9) {
+          animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            top: 100px;
+          }
+            75% {
+              opacity: 0.5;
+              top: 0px;
+          }
+            100% {
+              opacity: 1;
+          }
+        }
+
+        .responsive-table li {
+          border-radius: 3px;
+          padding: 25px 30px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 25px;
+        }
+
+        .responsive-table .table-header {
+          color: white;
+          background-color: #95a5a6;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+        .responsive-table .table-row {
+          background-color: #fff;
+          box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .responsive-table .table-row .col {  
+          font-size: 1.2rem;
+        }
+
+        .responsive-table .table-row .col > a{  
+          color: red;
+          font-weight: bold;
+          transition: all 0.5s ease-in-out;
+        }
+        
+        .responsive-table .table-row .col > a:hover {
+          text-shadow: 2px 2px rgba(119, 119, 119, 0.438);
+        }
+
+
+        .responsive-table .col {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .responsive-table .col-1 {
+          flex-basis: 50%;
+        }
+        .responsive-table .col-2 {
+          flex-basis: 50%;
+        }
+        .responsive-table .col-3 {
+          flex-basis: 35%;
+        }
+
+        /* media query */
+        @media all and (max-width: 767px) {
+          .responsive-table .table-header {
+            display: none;
+          }
+          .responsive-table li {
+            display: block;
+          }
+          .responsive-table .col {
+            flex-basis: 100%;
+          }
+          .responsive-table .col {
+            display: flex;
+            padding: 10px 0;
+          }
+          .responsive-table .col:before {
+            color: #6c7a89;
+            padding-right: 10px;
+            content: attr(data-label);
+            flex-basis: 50%;
+            text-align: right;
+          }
+        }
+        
     </style>
 </head>
 <body>
@@ -41,10 +230,61 @@
       </header>
 
       <div class="typewriter">
-          <h1>Overview</h1>
+          <h1>Bookings</h1>
       </div>
 
-      
+      <div class="booking__container">
+        <ul class="responsive-table">
+
+          <li class="table-header">
+            <div class="col col-1">Days</div>
+            <div class="col col-2">Amount</div>
+            <div class="col col-3">Status</div>
+          </li>
+
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends / Full Day</h2>Booking For Full Day</div>
+            <div class="col col-2">&#8377;28000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends / Evening</h2>Booking For Evening Slot</div>
+            <div class="col col-2">&#8377;9000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends / Afternoon</h2>Booking For Afternoon Slot</div>
+            <div class="col col-2">&#8377;11000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends / Morning</h2>Booking For Morning Slot</div>
+            <div class="col col-2">&#8377;12000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays / Full Day</h2>Booking For Full Day</div>
+            <div class="col col-2">&#8377;15000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays / Evening</h2>Booking For Evening Slot</div>
+            <div class="col col-2">&#8377;7000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays / Afternoon</h2>Booking For Afternoon Slot</div>
+            <div class="col col-2">&#8377;9000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays / Morning</h2>Booking For Morning Slot</div>
+            <div class="col col-2">&#8377;10000/-</div>
+            <div class="col col-3"><a href="#">Book Now</a></div>
+          </li>
+
+        </ul>
+      </div>
 
 
 
@@ -64,7 +304,16 @@
     <script src="../../js/cricket.js"></script>
 
     <script>
-     
+      window.onscroll = function() {
+          scrollFunction()
+      };
+      function scrollFunction() { 
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.querySelector(".booking__container").style.display="block";
+        } else {
+          document.querySelector(".booking__container").style.display="none";
+        }
+      }
     </script>
 
 </body>
