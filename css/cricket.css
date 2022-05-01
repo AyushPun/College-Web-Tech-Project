@@ -27,7 +27,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(100, 100, 100);
 }
-  
+
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
 /* -----------nav styles------------ */
 .nav {
   position: fixed;
@@ -248,7 +254,6 @@ transform: rotate(360deg);
   position: fixed;
   top: 0;
   height: 100%;
-  width: 100%;
   object-position: center;
   object-fit: cover;
   z-index: -1;
@@ -327,8 +332,8 @@ transform: rotate(360deg);
 
 /* footer */
 .footer {
-  max-width: 1200px;
-  width: 90%;
+  background-color: #d8d5d523;
+  width: 100%;
   margin: auto;
   text-align: center;
   padding: 20px 0;
