@@ -70,24 +70,32 @@
 
         .radio-btns {
             display: grid;
-            width: 80%;
+            max-width: 75%;
             gap: 10px;
-            grid-template-columns: repeat(3);
         }
 
-        .radio-btns div:nth-child(1) {
-            grid-column-start: 1;
-            grid-column-end: 3;
+        .radio-btns div:nth-child(2) {
+          grid-area: 1 / 2 / 3 / 3;
         }
 
-        .radio-btns div:nth-child(3) {
-            grid-column-start: 1;
-            grid-column-end: 5;
+        .radio-btns div:nth-child(5) {
+          grid-area: 2 / 3 / 4 / 4;
+        }
+        
+        .radio-btns div:nth-child(6) {
+          grid-area: 3 / 1 / 4 / 3;
         }
 
         .radio-btns div:nth-child(8) {
-            grid-column-start: 1;
-            grid-column-end: 3;
+          grid-area: 4 / 2 / 5 / 4;
+        }
+        
+        .radio-btns div:nth-child(9) {
+          grid-area: 6 / 3 / 8 / 4;
+        }
+        
+        .radio-btns div:nth-child(13) {
+          grid-area: 5 / 2 / 7 / 3;
         }
 
         .radio-btns:hover .radio-btns__btn:not(:hover) {
@@ -98,14 +106,15 @@
         }
         @media (min-width: 30rem) {
             .radio-btns {
-                grid-template-columns: repeat(3, 32.69%);
-        }
+                grid-template-columns: repeat(3, 33.33%);
+                grid-template-rows: repeat(6, 250px);
+                justify-content: center;
+            }
         }
         .radio-btns__btn {
             position: relative;
             cursor: pointer;
             transition: 0.3s;
-
         }
         .radio-btns__btn::after {
             content: '';
@@ -197,6 +206,24 @@
           <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
             <img src="../../images/cricket/gallery/9.jpg" alt="Image description">
           </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/cricket/gallery/10.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/cricket/gallery/11.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/cricket/gallery/12.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/cricket/gallery/13.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/cricket/gallery/14.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/cricket/gallery/15.jpg" alt="Image description">
+          </div>
 
         </div>
     </div>    
@@ -214,10 +241,6 @@
 
     <!-- scripting -->
     <script src="../../js/cricket.js"></script>
-
-    <script>
-     
-    </script>
 
 </body>
 </html>
