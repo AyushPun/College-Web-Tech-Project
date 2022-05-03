@@ -10,36 +10,153 @@
 </head>
 <body>
 
+  <nav class="nav" id="nav">
+    <a href="index.html"><img src="../../images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
+    <div class="nav__link hide">
+      <a href="../../index.html">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Facilities
+        <i class="fa fa-caret-down"></i>
+      </a>
+      <!-- <ul class="dropdown-menu">
+        <li>
+          <a href="facility.html">Sport Facilities</a>
+        </li>
+        <li>
+          <a href="feeDetails.html">Fee Details</a>
+        </li>
+      </ul> -->
+      <a href="#">Login</a>
+      <a href="#">PhotoGallery</a>
+      <a href="#">Booking</a>
+    </div>
+
+
+    <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
+
+    <i class="fa-solid fa-xmark hamIcon" id="hamClose" onclick="toggleHide()" ></i>
+
+    <a id="top__scroll" href="#top">&nbsp;<i class="fa-solid fa-arrow-up"></i>&nbsp;</a>
+  </nav>
+
   <header>
-    <nav class="nav" id="nav">
-      <a href="index.html"><img src="../../images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
-      <div class="nav__link hide">
-        <a href="../../index.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Facilities
-          <i class="fa fa-caret-down"></i>
-        </a>
-        <!-- <ul class="dropdown-menu">
-          <li>
-            <a href="facility.html">Sport Facilities</a>
-          </li>
-          <li>
-            <a href="feeDetails.html">Fee Details</a>
-          </li>
-        </ul> -->
-        <a href="#">Login</a>
-        <a href="#">PhotoGallery</a>
-        <a href="#">Booking</a>
-      </div>
+    <!-- video hero section -->
+    <video class="complex__video" poster="../images/hero.jpg" autoplay muted loop>
+      <source src="../video/hero.mp4" type="video/mp4">
+    </video>
 
-      <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
+    <div class="overlay">
+      <h1>Simply The Best</h1>
+      <h3>Reasons for Choosing US</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+      <br>
+      <button href="#hero">READ MORE</button>
+    </div>
 
-      <i class="fa-solid fa-xmark hamIcon" id="hamClose" onclick="toggleHide()" ></i>
-
-    </nav>
   </header>
 
+  <div class="hero" id="hero">
+    <div class="hero__text">
+      <div class="reveal fade-left">
+        <h1>Sports Complex</h1>
+        <p>Siri Fort Sports Complex has been set up by the Delhi Development Authority as a part of development and growth of Sports in Delhi. The complex was built in 1989, next to the Asian Games village by the Delhi Development Authority (DDA), which also runs the facility now. Also close by is the Siri Fort Auditorium complex. It has various sporting facilities like flood lit Tennis, Basketball, Golf Driving Range, an Indoor Badminton Stadium and playing facilities for Squash, Table Tennis, Billiards, Cricket, Football, Hockey, Aerobics, Yoga, Taekwondo, Multi gym, Swimming, Mini Golf Course, Jogging, Croquet, Skating, Shooting , Reiki, Naturopathy & Children Park. Facilities like Kruv Maga, Western Dance, Balle and Jazz have recently been added.</p>
+      </div>
+    </div>
+    <img src="../images/1.png" alt="">
+  </div>
+    <div class="hero__text reveal fade-right" style="padding-top: 4rem;">
+      <p>With its strategic location in the heart of South Delhi and it's well equipped facilities in 27 sporting disciplines, the complex also attracts for it's sheer aesthetic value. Encompassed by lush green lawns, the complex houses clay and deco turf courts for tennis enthusiasts, a plethora of other sporting facilities like cricket, hockey, basketball, a full service fitness centre, and even yoga and aerobics for the health conscious. In addition, the complex is home to the most popular Golf driving range of the country and an air rifle/pistol shooting range. The newly constructed aquatic pool is an added attraction. It's modern squash courts, Madan Lal Academy for Cricket, coaching for Tennis, Badminton and Squash remains star attractions.</p>
+    </div> -->
+
+  <!-- navbar 2nd -->
+  <div class="nav2__container">
+    <div class="nav2">
+      <a href="#infrasturcture">INFRASTRUCTURE</a>
+      <a href="#">By Rules</a>
+      <a href="#">Books & Play</a>
+      <div id="indicator"></div>
+    </div>
+  </div>
+
+  <div class="main">
+    <h2>Infrastructure</h2>
+      <table id="infrasturcture">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Description</th>
+            <th>Total Numbers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.</td>
+            <td>Sports Complexes</td>
+            <td>
+              15 - (5 in the South Zone, 3 each in the North and West Zone and 4 in
+              the East Zone)
+            </td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td>Mini Sports Complexes</td>
+            <td>
+              3 - Munirka (South), Pratap Nagar (West) &amp; Kanti Nagar (East)
+            </td>
+          </tr>
+    
+          <tr>
+            <td>3.</td>
+            <td>Swimming Pools</td>
+            <td>Seventeen (17)</td>
+          </tr>
+    
+          <tr>
+            <td>4.</td>
+            <td>Fitness Centres in Sports Complexes</td>
+            <td>18 - (including 1 gym exclusively for ladies)</td>
+          </tr>
+    
+          <tr>
+            <td>5.</td>
+            <td>Multigyms in Green Areas</td>
+            <td>21 - (including 1 gym exclusively for ladies)</td>
+          </tr>
+    
+          <tr>
+            <td>6.</td>
+            <td>Mini Football Grounds</td>
+            <td>10 - (2 in green areas &amp; 8 in sports complexes)</td>
+          </tr>
+    
+          <tr>
+            <td>7.</td>
+            <td>Golf Courses</td>
+            <td>2 - (Lado Sarai and Bhalswa)</td>
+          </tr>
+    
+          <tr>
+            <td>8.</td>
+            <td>Mini Golf Course</td>
+            <td>1 - (Siri Fort)</td>
+          </tr>
+    
+          <tr>
+            <td>9.</td>
+            <td>Stadium</td>
+            <td>
+              Squash and Badminton at Siri Fort Road, Table tennis and archery at
+              Yamuna Sports Complex.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- <div class="main__card">
+        
+      </div> -->
+  </div>
   <script src="../js/explore.js"></script>
 </body>
 </html>
