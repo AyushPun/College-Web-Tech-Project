@@ -54,7 +54,7 @@ function reveal() {
 
   window.addEventListener("scroll", reveal);
 
-  // loader
+// loader
 document.onreadystatechange = function() {
     if (document.readyState !== "complete") {
         document.querySelector(
