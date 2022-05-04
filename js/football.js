@@ -9,6 +9,7 @@ function toggleHide() {
     } else {
         document.getElementById("hamShow").style.display = "none";
         document.getElementById("hamClose").style.display = "block";
+
     }
 }
 
@@ -25,36 +26,25 @@ function scrollFunction() {
     if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         document.getElementById("nav").style.backgroundColor="#777";
         document.querySelector(".nav__link").style.backgroundColor="#777";
+
     } else {
         document.getElementById("nav").style.background="transparent";
         document.querySelector(".nav__link").style.background="transparent";
     }
 }
 
-// complex video speed
-/* now play three times as fast just for the heck of it */
-document.querySelector('video').playbackRate = 0.7;
+// crousal
+let i = 1;
+setInterval(() => {
+    i++;
+    if(i>3) {
+        i=1;
+    } 
+    document.getElementById("crousal").style.backgroundImage =`linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),    url('../../images/football/${i}.jpg')`;
+}, 5000);
 
-//sliding text
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
 
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-  }
-
-  window.addEventListener("scroll", reveal);
-
-  // loader
+// loader
 document.onreadystatechange = function() {
     if (document.readyState !== "complete") {
         document.querySelector(
