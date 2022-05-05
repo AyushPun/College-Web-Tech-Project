@@ -255,7 +255,7 @@ header {
 header video {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -20%;
 }
 
 header .overlay{
@@ -271,7 +271,7 @@ header .overlay{
 
 h1 {
   margin-top: 7rem;
-	font-size: 80px;
+	font-size: 5rem;
 	margin-bottom: 30px;
 }
 
@@ -370,7 +370,7 @@ button:hover{
   /* border: 2px solid red; */
   background-color: #615f5f;
   overflow: hidden;
-  height:100px;
+  height:6.25rem;
   width: 100%;
   position: sticky;
   top: 0;
@@ -404,6 +404,10 @@ button:hover{
   transition: 0.2s ease color;
 }
 
+.nav2__container .nav2 a:nth-child(2) {
+  display: none;
+}
+
 .nav2 a:before,
 .nav2 a:after {
   content: "";
@@ -435,19 +439,19 @@ button:hover{
   background-color: red;
 }
 
-.nav2 a:nth-child(2):before {
+.nav2 a:nth-child(3):before {
   background-color: #00e2ff;
 }
 
-.nav2 a:nth-child(2):after {
+.nav2 a:nth-child(3):after {
   background-color: #89ff00;
 }
 
-.nav2 a:nth-child(3):before {
+.nav2 a:nth-child(4):before {
   background-color: purple;
 }
 
-.nav2 a:nth-child(3):after {
+.nav2 a:nth-child(4):after {
   background-color: palevioletred;
 }
 
@@ -476,12 +480,12 @@ button:hover{
   left: 8%;
 }
 
-.nav2 a:nth-child(2):hover ~ #indicator {
+.nav2 a:nth-child(3):hover ~ #indicator {
   left: 39%;
   background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
 
-.nav2 a:nth-child(3):hover ~ #indicator {
+.nav2 a:nth-child(4):hover ~ #indicator {
   left: 70%;
   background: linear-gradient(130deg, purple, palevioletred);
 }
@@ -531,7 +535,7 @@ button:hover{
 
 /* table */
 table {
-  width: 800px;
+  width: 50rem;
   border-collapse: collapse;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -673,6 +677,7 @@ tbody td:hover:before {
 }
 
 /* footer */
+/*
 .footer {
   min-width: 90%;
   margin: auto;
@@ -697,5 +702,225 @@ tbody td:hover:before {
   cursor: pointer;
   padding: 1.2rem 0;
   font-size: 2rem;
+} */
+
+/* ####################### footer ######################### */
+
+.footer{
+  background: rgba(231, 231, 231, 0.179);
+  margin-top: 3rem;
 }
 
+.footer .fbox-container{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.footer .fbox-container .fbox{
+  margin-right: 8rem;
+}
+
+.footer .fbox-container .fbox:nth-child(1){
+    width: 40%;
+}
+
+.footer .fbox-container .fbox h3{
+  font-size: 2.3rem;
+  color:rgb(255, 255, 255);
+  padding:1rem 0;
+}
+
+.footer .fbox-container .fbox .links{
+  display: block;
+  font-size: 1.2rem;
+  color:rgb(44, 44, 44);
+  padding:1rem 0;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.footer .fbox-container .fbox .links i{
+  color:#ffffff;
+  padding-right: .5rem;
+}
+
+.footer .fbox-container .fbox .links:hover{
+  font-size: 1.3rem;
+  text-decoration: underline;
+  color:rgb(5, 5, 5);
+}
+
+.footer .fbox-container .fbox .link:hover{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color:rgb(0, 0, 0);
+}
+
+.footer .fbox-container .fbox p{
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color:rgb(44, 44, 44);
+  padding:1rem 0;
+}
+
+.footer .fbox-container .fbox .share a{
+  height:4rem;
+  width:4rem;
+  line-height:4rem;
+  border-radius: .5rem;
+  font-size: 2rem;
+  color:black;
+  margin-right: .2rem;
+  background: #eee;
+  text-align: center;
+}
+
+.footer .fbox-container .fbox .share a:hover{
+  background: #333;
+  color: #fff;
+}
+
+.footer .fbox-container .fbox .email{
+  width: 100%;
+  margin:.7rem 0;
+  padding:1rem;
+  border-radius: .5rem;
+  background: #eee;
+  font-size: 1.6rem;
+  color:black;
+  text-transform: none;
+}
+
+.footer .fbox-container .fbox .payment-img{
+  margin-top: 2rem;
+  height: 3rem;
+  display: block;
+}
+
+.footer .credit{
+  text-align: center;
+  margin-top: 2rem;
+  padding:1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  font-size: 1.3rem;
+  color:black;
+  border-top: rgb(39, 39, 39);
+  background-color: rgba(210, 210, 210, 0.193);
+}
+
+.footer .credit span{
+  color:#ffffff;
+}
+
+
+/* hr styling */
+hr {   border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(153, 153, 153, 0), rgba(143, 142, 142, 0.75), rgba(0, 0, 0, 0));
+  width: 95%;
+  margin: 4rem auto;
+}
+
+/* media queries */
+@media (max-width: 786px) {
+    html {
+      font-size: 65%;
+    }
+    table {
+      width: 100%;
+    }
+    .main__card {
+      width: 100%;
+    }
+    #transparentImg {
+      display: none;
+    }
+
+    .nav2__container .nav2 a:nth-child(1) {
+      display: none;
+    }
+    .nav2__container .nav2 a:nth-child(2) {
+      display: block;
+    }
+
+    .nav2 a:nth-child(2):before {
+      background-color: yellow;
+    }
+    
+    .nav2 a:nth-child(2):after {
+      background-color: red;
+    }
+    
+    .nav2 a:nth-child(3):before {
+      background-color: #00e2ff;
+    }
+    
+    .nav2 a:nth-child(3):after {
+      background-color: #89ff00;
+    }
+    
+    .nav2 a:nth-child(4):before {
+      background-color: purple;
+    }
+    
+    .nav2 a:nth-child(4):after {
+      background-color: palevioletred;
+    }
+
+    .nav2 a:nth-child(2):hover ~ #indicator {
+      background: linear-gradient(130deg, yellow, red);
+      left: 8%;
+    }
+    
+    .nav2 a:nth-child(3):hover ~ #indicator {
+      left: 39%;
+      background: linear-gradient(130deg, #00e2ff, #89ff00);
+    }
+    
+    .nav2 a:nth-child(4):hover ~ #indicator {
+      left: 70%;
+      background: linear-gradient(130deg, purple, palevioletred);
+    }
+
+    .main .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer{
+      text-align: center;
+    }
+    
+    .footer .fbox-container .fbox{
+      margin-right: 0;
+    }
+    
+    .footer .fbox-container .fbox .share{
+      margin: 2rem 0;
+    }
+    
+    .footer .fbox-container .fbox h3{
+        margin-top: 5rem;
+        font-size: 3.2rem;
+    }
+  
+    .footer .fbox-container{
+      flex-direction: column;
+    }
+  
+    .footer .fbox-container .fbox:nth-child(1){
+      width: 100%;
+    }
+
+    .footer .fbox-container .fbox:nth-child(2) {
+      text-align: left;
+    }
+    
+
+    .footer .fbox-container .fbox:nth-child(3) {
+      text-align: left;
+    }
+}

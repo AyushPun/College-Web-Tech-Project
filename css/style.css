@@ -431,31 +431,6 @@ nav {
   font-size: 1.2rem;
 }
 
-
-/* footer */
-.footer {
-  max-width: 1200px;
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.footer h2 {
-  margin-bottom: 1.5rem;
-  margin-top: 2.3rem;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.footer i {
-  color: #777;
-  margin: 0 13px;
-  cursor: pointer;
-  padding: 1.2rem 0;
-  font-size: 2rem;
-}
-
 /* top scroll */
 #top__scroll {
     position: fixed;
@@ -485,6 +460,117 @@ nav {
 #top__scroll:hover {
     box-shadow: none;
 }
+
+/* ####################### footer ######################### */
+
+.footer{
+  background: rgba(231, 231, 231, 0.179);
+  margin-top: 3rem;
+}
+
+.footer .fbox-container{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.footer .fbox-container .fbox{
+  margin-right: 8rem;
+}
+
+.footer .fbox-container .fbox:nth-child(1){
+    width: 40%;
+}
+
+.footer .fbox-container .fbox h3{
+  font-size: 2.3rem;
+  color:#777;
+  padding:1rem 0;
+}
+
+.footer .fbox-container .fbox .links{
+  display: block;
+  font-size: 1.2rem;
+  color: #777;
+  padding:1rem 0;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.footer .fbox-container .fbox .links i{
+  color: #777;
+  padding-right: .5rem;
+}
+
+.footer .fbox-container .fbox .links:hover{
+  font-size: 1.3rem;
+  text-decoration: underline;
+  color:rgb(5, 5, 5);
+}
+
+.footer .fbox-container .fbox .link:hover{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color:rgb(0, 0, 0);
+}
+
+.footer .fbox-container .fbox p{
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color:rgb(44, 44, 44);
+  padding:1rem 0;
+}
+
+.footer .fbox-container .fbox .share a{
+  height:4rem;
+  width:4rem;
+  line-height:4rem;
+  border-radius: .5rem;
+  font-size: 2rem;
+  color:black;
+  margin-right: .2rem;
+  background: #eee;
+  text-align: center;
+}
+
+.footer .fbox-container .fbox .share a:hover{
+  background: #777;
+  color: #fff;
+}
+
+.footer .fbox-container .fbox .email{
+  width: 100%;
+  margin:.7rem 0;
+  padding:1rem;
+  border-radius: .5rem;
+  background: #eee;
+  font-size: 1.6rem;
+  color:black;
+  text-transform: none;
+}
+
+.footer .fbox-container .fbox .payment-img{
+  margin-top: 2rem;
+  height: 3rem;
+  display: block;
+}
+
+.footer .credit{
+  text-align: center;
+  margin-top: 2rem;
+  padding:1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  font-size: 1.3rem;
+  color:black;
+  border-top: rgb(39, 39, 39);
+  background-color: rgba(210, 210, 210, 0.193);
+}
+
+.footer .credit span{
+  color:#777;
+}
+
 
 /* media queries */
 @media (max-width: 768px) {
@@ -530,6 +616,40 @@ nav {
   .games__section {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .footer{
+    text-align: center;
+  }
+  
+  .footer .fbox-container .fbox{
+    margin-right: 0;
+  }
+  
+  .footer .fbox-container .fbox .share{
+    margin: 2rem 0;
+  }
+  
+  .footer .fbox-container .fbox h3{
+      margin-top: 5rem;
+      font-size: 3.2rem;
+  }
+
+  .footer .fbox-container{
+    flex-direction: column;
+  }
+
+  .footer .fbox-container .fbox:nth-child(1){
+    width: 100%;
+  }
+
+  .footer .fbox-container .fbox:nth-child(2) {
+    text-align: left;
+  }
+  
+
+  .footer .fbox-container .fbox:nth-child(3) {
+    text-align: left;
   }
 }
 
