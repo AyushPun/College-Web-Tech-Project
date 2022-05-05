@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Raleway&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Corinthia", cursive;
+  font-family: "Raleway", sans-serif;
+  background: #000000;  /* fallback for old browsers */
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+} /* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777;
+} /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100);
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: #333;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+/* loader */
+#loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* topscroll */
+    #top__scroll {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border-radius: 100%;
+    padding: 1rem;
+    background-color: #777;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px;
+    transform: translateX(150%);
+    z-index: 999;
+    transition: all 0.8s ease-in-out;
+    text-decoration: none;
+    }
+
+    #top__scroll i {
+    transition: 0.5s;
+    }
+    #top__scroll:hover i{
+    transform: rotate(360deg);
+    }
+
+    #top__scroll:hover {
+    box-shadow: none;
+    }
+    /* ------------------- */
+
+
+    /* ##################login signup #######################*/
+    .wrapper {
+        width: 21.875rem;
+        height: 28.125rem;
+        margin: 80px auto;
+        perspective: 600px;
+        text-align: left;
+    }
+    .rec-prism {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-100px);
+        transition: transform 0.5s ease-in;
+    }
+    .face {
+        border: 2px solid red;
+        position: absolute;
+        width: 21.875rem;
+        height: 28.125rem;
+        padding: 20px;
+        background: rgba(250, 250, 250, 0.96);
+        border: 3px solid #777;
+        border-radius: 3px;
+    }
+    .face .content {
+        color: #666;
+    }
+    .face .content h2 {
+        font-size: 2rem;
+        color: #777;
+    }
+    .face .content .field-wrapper {
+        margin-top: 30px;
+        position: relative;
+    }
+    .face .content .field-wrapper label {
+        position: absolute;
+        pointer-events: none;
+        font-size: 0.85em;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: all ease-in 0.25s;
+        color: #999;
+    }
+    .face .content .field-wrapper input[type="text"], .face .content .field-wrapper input[type="password"], .face .content .field-wrapper input[type="submit"], .face .content .field-wrapper textarea {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .face .content .field-wrapper input[type="text"]:focus, .face .content .field-wrapper input[type="password"]:focus, .face .content .field-wrapper input[type="submit"]:focus, .face .content .field-wrapper textarea:focus {
+        outline: none;
+    }
+    .face .content .field-wrapper input[type="text"], .face .content .field-wrapper input[type="password"], .face .content .field-wrapper textarea {
+        width: 100%;
+        border: none;
+        background: transparent;
+        line-height: 2em;
+        border-bottom: 1px solid #07ad90;
+        color: #666;
+    }
+    .face .content .field-wrapper input[type="text"]::-webkit-input-placeholder, .face .content .field-wrapper input[type="password"]::-webkit-input-placeholder, .face .content .field-wrapper textarea::-webkit-input-placeholder {
+        opacity: 0;
+    }
+    .face .content .field-wrapper input[type="text"]::-moz-placeholder, .face .content .field-wrapper input[type="password"]::-moz-placeholder, .face .content .field-wrapper textarea::-moz-placeholder {
+        opacity: 0;
+    }
+    .face .content .field-wrapper input[type="text"]:-ms-input-placeholder, .face .content .field-wrapper input[type="password"]:-ms-input-placeholder, .face .content .field-wrapper textarea:-ms-input-placeholder {
+        opacity: 0;
+    }
+    .face .content .field-wrapper input[type="text"]:-moz-placeholder, .face .content .field-wrapper input[type="password"]:-moz-placeholder, .face .content .field-wrapper textarea:-moz-placeholder {
+        opacity: 0;
+    }
+    .face .content .field-wrapper input[type="text"]:focus + label, .face .content .field-wrapper input[type="password"]:focus + label, .face .content .field-wrapper textarea:focus + label, .face .content .field-wrapper input[type="text"]:not(:placeholder-shown) + label, .face .content .field-wrapper input[type="password"]:not(:placeholder-shown) + label, .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
+        top: -35%;
+        color: #42509e;
+    }
+    .face .content .field-wrapper input[type="submit"] {
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        width: 100%;
+        background: #07ad90;
+        line-height: 2em;
+        color: #fff;
+        border: 1px solid #07ad90;
+        border-radius: 3px;
+        padding: 5px;
+    }
+    .face .content .field-wrapper input[type="submit"]:hover {
+        opacity: 0.9;
+    }
+    .face .content .field-wrapper input[type="submit"]:active {
+        transform: scale(0.96);
+    }
+    .face .content .field-wrapper textarea {
+        resize: none;
+        line-height: 1em;
+    }
+    .face .content .field-wrapper textarea:focus + label, .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
+        top: -25%;
+    }
+    .face .thank-you-msg {
+        position: absolute;
+        width: 200px;
+        height: 130px;
+        text-align: center;
+        font-size: 2em;
+        color: #07ad90;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .face .thank-you-msg:after {
+        position: absolute;
+        content: '';
+        width: 50px;
+        height: 25px;
+        border: 10px solid #07ad90;
+        border-right: 0;
+        border-top: 0;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+        transform: translate(-50%, -50%) rotate(0deg) scale(0);
+        -webkit-animation: success ease-in 0.15s forwards;
+        animation: success ease-in 0.15s forwards;
+        animation-delay: 2s;
+    }
+
+    .face-front {
+        transform: rotateY(0deg) translateZ(10.938rem);
+    }
+    .face-top {
+        height: 22.188rem;
+        transform: rotateX(90deg) translateZ(11.063rem);
+    }
+    .face-back {
+        transform: rotateY(180deg) translateZ(10.938rem);
+    }
+    .face-right {
+        transform: rotateY(90deg) translateZ(10.938rem);
+    }
+    .face-left {
+        transform: rotateY(-90deg) translateZ(10.938rem);
+    }
+    .face-bottom {
+        height: 21.875rem;
+        transform: rotateX(-90deg) translateZ(17.188rem);
+    }
+
+    .nav2 {
+        /* border: 2px solid red; */
+        margin: 10px 0;
+        padding-top: 2rem;
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav2 li {
+        display: inline-block;
+        list-style-type: none;
+        font-size: 2rem;
+        margin: 0 25px;
+        background: #FFFFFF;
+        background: radial-gradient(ellipse farthest-corner at center center, #FFFFFF 50%, #07ad917a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+    .nav2 li:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        border-bottom: 1px solid #fff;
+        border-width: 3px;
+        border-radius: 10px;
+        transition: all ease-in 0.25s;
+    }
+    .nav2 li:hover:after {
+        width: 100%;
+    }
+    .psw, .signup, .singin {
+        display: block;
+        margin: 20px 0;
+        font-size: 0.75em;
+        text-align: center;
+        color: #42509e;
+        cursor: pointer;
+    }
+    small {
+        font-size: 0.7em;
+    }
+    @keyframes success {
+        from {
+            -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+        }
+            to {
+                -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+        }
+    }
+
+/* ------------------- ---------------------------------*/
+
+/* ####################### footer ######################### */
+
+.footer{
+    background: rgba(231, 231, 231, 0.179);
+    margin-top: 3rem;
+  }
+  
+  .footer .fbox-container{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .footer .fbox-container .fbox{
+    margin-right: 8rem;
+  }
+  
+  .footer .fbox-container .fbox:nth-child(1){
+      width: 40%;
+  }
+  
+  .footer .fbox-container .fbox h3{
+    font-size: 2.3rem;
+    color:rgb(255, 255, 255);
+    padding:1rem 0;
+  }
+  
+  .footer .fbox-container .fbox .links{
+    display: block;
+    font-size: 1.2rem;
+    color:rgb(44, 44, 44);
+    padding:1rem 0;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .footer .fbox-container .fbox .links i{
+    color:#ffffff;
+    padding-right: .5rem;
+  }
+  
+  .footer .fbox-container .fbox .links:hover{
+    font-size: 1.3rem;
+    text-decoration: underline;
+    color:rgb(5, 5, 5);
+  }
+  
+  .footer .fbox-container .fbox .link:hover{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+  }
+  
+  .footer .fbox-container .fbox p{
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color:rgb(44, 44, 44);
+    padding:1rem 0;
+  }
+  
+  .footer .fbox-container .fbox .share a{
+    height:4rem;
+    width:4rem;
+    line-height:4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:black;
+    margin-right: .2rem;
+    background: #eee;
+    text-align: center;
+  }
+  
+  .footer .fbox-container .fbox .share a:hover{
+    background: #333;
+    color: #fff;
+  }
+  
+  .footer .fbox-container .fbox .email{
+    width: 100%;
+    margin:.7rem 0;
+    padding:1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color:black;
+    text-transform: none;
+  }
+  
+  .footer .fbox-container .fbox .payment-img{
+    margin-top: 2rem;
+    height: 3rem;
+    display: block;
+  }
+  
+  .footer .credit{
+    text-align: center;
+    margin-top: 2rem;
+    padding:1rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    font-size: 1.3rem;
+    color:black;
+    border-top: rgb(39, 39, 39);
+    background-color: rgba(210, 210, 210, 0.193);
+  }
+  
+  .footer .credit span{
+    color:#ffffff;
+  }
+
+
+  @media (max-width: 786px) {
+    html {
+        font-size: 65%;
+    }
+    .footer{
+        text-align: center;
+    }
+    
+    .footer .fbox-container .fbox{
+        margin-right: 0;
+    }
+    
+    .footer .fbox-container .fbox .share{
+        margin: 2rem 0;
+    }
+    
+    .footer .fbox-container .fbox h3{
+        margin-top: 5rem;
+        font-size: 3.2rem;
+    }
+
+    .footer .fbox-container{
+        flex-direction: column;
+    }
+
+    .footer .fbox-container .fbox:nth-child(1){
+        width: 100%;
+    }
+
+    .footer .fbox-container .fbox:nth-child(2) {
+        text-align: left;
+    }
+    
+
+    .footer .fbox-container .fbox:nth-child(3) {
+        text-align: left;
+    }
+
+    .nav2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav2 li {
+        margin: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .face .content .field-wrapper input[type="submit"] {
+        padding: 2px;
+    }
+  }
