@@ -148,17 +148,6 @@
           font-size: 1.2rem;
         }
 
-        .responsive-table .table-row .col > a{  
-          color: red;
-          font-weight: bold;
-          transition: all 0.5s ease-in-out;
-        }
-        
-        .responsive-table .table-row .col > a:hover {
-          text-shadow: 2px 2px rgba(119, 119, 119, 0.438);
-        }
-
-
         .responsive-table .col {
           text-align: center;
           display: flex;
@@ -198,6 +187,96 @@
             flex-basis: 50%;
             text-align: right;
           }
+        }
+        
+        /* modal */
+        .btn__book {
+          appearance: none;
+          background: #16a34a;
+          border-radius: 0.25em;
+          color: white;
+          cursor: pointer;
+          display: inline-block;
+          font-weight: 500;
+          height: 3em;
+          line-height: 3em;
+          padding: 0 1em;
+        }
+        .btn__book:hover {
+          background-color: #17ac4e;
+        }
+        .details-modal {
+          background: #fff;
+          border-radius: 0.5em;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          left: 50%;
+          max-width: 90%;
+          pointer-events: none;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 30em;
+          text-align: left;
+          max-height: 90vh;
+          display: flex;
+          flex-direction: column;
+        }
+        .details-modal .details-modal-close {
+          align-items: center;
+          color: #111827;
+          display: flex;
+          height: 4.5em;
+          justify-content: center;
+          pointer-events: none;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 4.5em;
+        }
+        .details-modal .details-modal-close svg {
+          display: block;
+        }
+        .details-modal .details-modal-title {
+          color: #111827;
+          padding: 1.5em 2em;
+          pointer-events: all;
+          position: relative;
+          width: calc(100% - 4.5em);
+        }
+        .details-modal .details-modal-title h1 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .details-modal .details-modal-content {
+          border-top: 1px solid #e0e0e0;
+          padding: 2em;
+          pointer-events: all;
+          overflow: auto;
+        }
+        .details-modal-overlay {
+          transition: opacity 0.2s ease-out;
+          pointer-events: none;
+          background: rgba(15, 23, 42, 0.8);
+          position: fixed;
+          opacity: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          top: 0;
+        }
+        details[open] .details-modal-overlay {
+          pointer-events: all;
+          opacity: 0.5;
+        }
+        .summary {
+          list-style: none;
+        }
+        .summary:focus {
+          outline: none;
+        }
+        .summary::-webkit-details-marker {
+          display: none;
         }
         
     </style>
@@ -247,46 +326,74 @@
           <li class="table-row">
             <div class="col col-1"><h2>Weekends / Full Day</h2>Booking For Full Day</div>
             <div class="col col-2">&#8377;28000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekends / Evening</h2>Booking For Evening Slot</div>
             <div class="col col-2">&#8377;9000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekends / Afternoon</h2>Booking For Afternoon Slot</div>
             <div class="col col-2">&#8377;11000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekends / Morning</h2>Booking For Morning Slot</div>
             <div class="col col-2">&#8377;12000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekdays / Full Day</h2>Booking For Full Day</div>
             <div class="col col-2">&#8377;15000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekdays / Evening</h2>Booking For Evening Slot</div>
             <div class="col col-2">&#8377;7000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekdays / Afternoon</h2>Booking For Afternoon Slot</div>
             <div class="col col-2">&#8377;9000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3"><button class="btn__book">Book Now</button></div>
           </li>
           <li class="table-row">
             <div class="col col-1"><h2>Weekdays / Morning</h2>Booking For Morning Slot</div>
             <div class="col col-2">&#8377;10000/-</div>
-            <div class="col col-3"><a href="#">Book Now</a></div>
+            <div class="col col-3">
+              <div class="summary">
+                <button class="btn__book">Book Now</button>
+                <div class="details-modal-overlay"></div>
+              </div>                  
+            </div>
           </li>
 
         </ul>
       </div>
+
+      <details>
+        
+
+        <div class="details-modal">
+          <div class="details-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z" fill="black" />
+            </svg>
+          </div>
+          <div class="details-modal-title">
+            <h1>My details modal</h1>
+          </div>
+          <div class="details-modal-content">
+            <p>
+              You can click the X in the corner or click the overlay to close this modal.
+              Something like this could be useful as a nice way to show additional information,
+              but that's about as far as I would take it. It's just a nice way of styling the details element.
+            </p>
+          </div>
+        </div>
+
+      </details>
 
 
 

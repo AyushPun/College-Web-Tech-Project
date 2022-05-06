@@ -418,6 +418,10 @@ nav {
   border-bottom: 2px solid #ddd;
   padding: 1rem 0;
   outline: none;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 197px;
+  min-height: 197px;
 }
 
 .form-container h2 {
@@ -686,3 +690,63 @@ nav {
   }
 
 }
+
+
+/* Amenities */
+.container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  background-color: rgba(231, 231, 231, 0.179);
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  border-width: 2px;
+  border-bottom: 2px solid rgba(204, 204, 204, 0.349);
+  padding: 16px 0px;
+  margin-bottom: 10px;
+}
+
+.container h2:hover {
+  color: #777;
+}
+
+.amenities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6em;
+}
+
+.amenities div {
+  border: 1px solid #ccc;
+  padding: 18px;
+  font-size: 14px;
+  box-shadow: 0px 2px 5px #ccc;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+}
+
+.amenities div img{
+  padding-right: 0.5rem;
+  width: 35px;
+  height: 25px;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+@media (max-width: 786px) {
+  .amenities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .amenities {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
