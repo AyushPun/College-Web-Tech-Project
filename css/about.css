@@ -398,22 +398,6 @@ transform: translate(2px, 0) rotate(-45deg);
   overflow: hidden;     
 }
 
-.container ul li p span {
-  display: block;
-  margin-left: 10px;
-  color: rgb(48, 69, 92);
-   line-height: 26px;
-  letter-spacing: 1px;
-  position: relative;
-  padding: 0 11px;
-  max-height: 800px;
-  margin-top: 14px;
-  opacity: 1;
-  transform: translate(0,0);
-  overflow: hidden;    
-   
-}
-
 .transition, .container ul li p, .container ul li i:before, .container ul li i:after {
   transition: all 0.25s ease-in-out;
 }
@@ -597,6 +581,23 @@ animation: flipdown 0.5s ease both;
   line-height: 2.5rem;
   color: #333;
   font-weight: 300;
+}
+
+/* feedback form */
+.feedback {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+.feedback iframe {
+  width: 100%;
+  min-height: 80vh;
+  box-shadow: 0 7px 7px 7px rgba(139, 139, 139, 0.062) inset;
 }
 
 /* ####################### footer ######################### */
