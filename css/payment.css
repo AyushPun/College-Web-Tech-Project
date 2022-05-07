@@ -252,6 +252,7 @@ transform: rotate(360deg);
   display:block; 
   margin:auto;
   padding:60px 20px; 
+  z-index: 2;
 }
 
 .logo-card{
@@ -300,23 +301,23 @@ input:focus{
   float:left;
 }
 .ccv{
-  width:40px; 
+  width:35px; 
   padding-left: 5px;
   font-size:15px;
   margin-top: -2px;
 }
 
 .receipt{
-  background: #dbdce0; 
-  border-radius:4px; 
-  padding:5%; 
-  padding-top:200px; 
-  max-width:600px; 
-  display:block; 
-  margin:auto; 
-  margin-top:-180px; 
-  z-index:-999; 
+  background: #dbdce0;
+  border-radius:4px;
+  padding:5%;
+  padding-top:200px;
+  max-width:600px;
+  display:block;
+  margin:auto;
+  margin-top:-180px;
   position:relative;
+  z-index: -2;
 }
 
 .col{
@@ -324,14 +325,20 @@ input:focus{
   float:left;
 }
 
-.bought-item{
+.package {
   background:#f5f5f567;
-  width: fit-content;
-  font-size: 1.5rem;
   padding:10px;
+  margin: 5px auto;
+  border-radius: 10px;
+  width: max-content;
+}
+
+.bought-item{
+  font-size: 1.5rem;
   border-radius: 5px;
   margin-top: 1rem;
 }
+
 .bought-items{
   margin-top: 0.5rem;
 }

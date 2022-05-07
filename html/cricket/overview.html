@@ -32,7 +32,6 @@
         }
         
         .typewriter h1 {
-            
             color: #fff;
             width: fit-content;
             text-transform: uppercase;
@@ -60,6 +59,11 @@
             50% { border-color: orange }
         }
 
+        @media (max-width: 786px) {
+          .typewriter h1 {
+            font-size: 3rem;
+          }
+        }
 
 
         /* sliding cards styling */
@@ -181,6 +185,12 @@
           border-style: outset;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
+
+        @media (max-width: 768px) {
+          .map__container iframe {
+            width: 400px;
+          }
+        }
     </style>
 </head>
 <body>
@@ -196,14 +206,11 @@
           <a href="index.html"><img src="../../images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
           <div class="nav__link hide">
             <a href="../../index.html">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">Facilities
-              <i class="fa fa-caret-down"></i>
-            </a>
-            <a href="#">Login</a>
-            <a href="#">PhotoGallery</a>
-            <a href="#">Booking</a>
+            <a href="../about.html">About Us</a>
+            <a href="../../index.html#contact">Contact</a>
+            <a href="../login.html">Login/Signup</a>
+            <a href="./gallery.html">PhotoGallery</a>
+            <a href="./booking.html">Booking</a>
           </div>
 
           <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
@@ -325,23 +332,54 @@
               <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3502.0095895349627!2d77.07558131425945!3d28.629474690971925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x390d04c0f23874db%3A0x7f63d009f51b7a06!2sJanakpuri%20West%2C%20Chatrapati%2C%20Shivaji%20Marg%2C%20Janakpuri%20District%20Center%2C%20Janakpuri%2C%20New%20Delhi%2C%20Delhi%20110058!3m2!1d28.629469999999998!2d77.07777!5e0!3m2!1sen!2sin!4v1651385957122!5m2!1sen!2sin" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
-            
-        <!-- Address-
-        Balola ,New Delhi ,Delhi ,Delhi -122102 -->
       </section>
 
 
 
+<!-- footer section starts  -->
 
-      <div class="footer">
-          <h2 id="about">About Us</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, quas tempora incidunt cum fugit laborum esse quod at magni <br>minus doloremque optio odio! Deserunt molestiae omnis quo dicta harum modi.</p>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-github"></i>
-          <p> &#169; Ayush Pun</p>
+<div class="footer">
+
+  <div class="fbox-container">
+
+
+      <div class="fbox">
+          <h3> Sports Complex </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita veritatis, eaque atque unde quisquam cum a quod asperiores perspiciatis ad eum enim dolorum, laudantium fugit recusandae commodi exercitationem minus!
+          </p>
+          <div class="share">
+              <a href="#" class="fab fa-github"></a>
+              <a href="#" class="fab fa-linkedin"></a>
+              <a href="#" class="fab fa-twitter"></a>
+          </div>
       </div>
+
+      <div class="fbox">
+          <h3>Contact Info</h3>
+          <a class="links link"> <i class="fas fa-phone"></i>+471-456-7890</a>
+          <a class="links link"> <i class="fas fa-phone"></i>+231-578-3333</a>
+          <a class="links link"> <i class="fas fa-envelope"></i>Ayu@gmail.com</a>
+          <a class="links link"> <i class="fas fa-map-marker-alt"></i>India - 110027</a>
+          <a href="../index.html#contact" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
+      </div>
+
+      <div class="fbox">
+          <h3>Glance</h3>
+          <a href="../../index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+          <a href="../about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
+          <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+          <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
+          <a href="../explore.html#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
+      </div>
+
+  </div>
+
+  <div class="credit"> Made with &hearts; by <span> Ayush Pun </span> <br> World Best Sports Complex
+      &copy; 2022, all rights reserved. </div>
+
+  </div>
+<!-- footer section ends -->
 
 
     <!-- scripting -->

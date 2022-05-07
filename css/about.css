@@ -623,7 +623,7 @@ animation: flipdown 0.5s ease both;
   
   .footer .fbox-container .fbox h3{
     font-size: 2.3rem;
-    color:rgb(255, 255, 255);
+    color:#777;
     padding:1rem 0;
   }
   
@@ -637,7 +637,7 @@ animation: flipdown 0.5s ease both;
   }
   
   .footer .fbox-container .fbox .links i{
-    color:#ffffff;
+    color:#777;
     padding-right: .5rem;
   }
   
@@ -707,7 +707,7 @@ animation: flipdown 0.5s ease both;
   }
   
   .footer .credit span{
-    color:#ffffff;
+    color: #777;
   }
 
 

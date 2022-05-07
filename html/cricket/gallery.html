@@ -47,6 +47,11 @@
                 blink-caret .5s step-end infinite;
         }
 
+        @media (max-width: 768px) {
+          .typewriter h1 {
+            font-size: 3rem;
+          }
+        }
         /* The typing effect */
         @keyframes typing {
             from { width: 0 }
@@ -155,14 +160,11 @@
           <a href="index.html"><img src="../../images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
           <div class="nav__link hide">
             <a href="../../index.html">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">Facilities
-              <i class="fa fa-caret-down"></i>
-            </a>
-            <a href="#">Login</a>
-            <a href="#">PhotoGallery</a>
-            <a href="#">Booking</a>
+            <a href="../about.html">About Us</a>
+            <a href="../../index.html#contact">Contact</a>
+            <a href="../login.html">Login/Signup</a>
+            <a href="./gallery.html">PhotoGallery</a>
+            <a href="./booking.html">Booking</a>
           </div>
 
           <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
@@ -233,15 +235,50 @@
         </div>
     </div>    
 
-      <div class="footer">
-          <h2 id="about">About Us</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, quas tempora incidunt cum fugit laborum esse quod at magni <br>minus doloremque optio odio! Deserunt molestiae omnis quo dicta harum modi.</p>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-github"></i>
-          <p> &#169; Ayush Pun</p>
-      </div>
+      <!-- footer section starts  -->
+
+  <section class="footer">
+
+    <div class="fbox-container">
+
+
+        <div class="fbox">
+            <h3> Sports Complex </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita veritatis, eaque atque unde quisquam cum a quod asperiores perspiciatis ad eum enim dolorum, laudantium fugit recusandae commodi exercitationem minus!
+            </p>
+            <div class="share">
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-twitter"></a>
+            </div>
+        </div>
+
+        <div class="fbox">
+            <h3>Contact Info</h3>
+            <a class="links link"> <i class="fas fa-phone"></i>+471-456-7890</a>
+            <a class="links link"> <i class="fas fa-phone"></i>+231-578-3333</a>
+            <a class="links link"> <i class="fas fa-envelope"></i>Ayu@gmail.com</a>
+            <a class="links link"> <i class="fas fa-map-marker-alt"></i>India - 110027</a>
+            <a href="../index.html#contact" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
+        </div>
+
+        <div class="fbox">
+            <h3>Glance</h3>
+            <a href="../../index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+            <a href="../about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
+            <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+            <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
+            <a href="../explore.html#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> Made with &hearts; by <span> Ayush Pun </span> <br> World Best Sports Complex
+        &copy; 2022, all rights reserved. </div>
+
+</section>
+<!-- footer section ends -->
 
 
     <!-- scripting -->
