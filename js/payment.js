@@ -9,7 +9,6 @@ function toggleHide() {
     } else {
         document.getElementById("hamShow").style.display = "none";
         document.getElementById("hamClose").style.display = "block";
-
     }
 }
 
@@ -26,25 +25,11 @@ function scrollFunction() {
     if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         document.getElementById("nav").style.backgroundColor="#777";
         document.querySelector(".nav__link").style.backgroundColor="#777";
-
     } else {
         document.getElementById("nav").style.background="transparent";
         document.querySelector(".nav__link").style.background="transparent";
     }
 }
-
-// crousal
-let i = 1;
-setInterval(() => {
-    i++;
-    if(i>3) {
-        i=1;
-    } 
-    if(document.getElementById("crousal") != null) {
-        document.getElementById("crousal").style.backgroundImage = `linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),    url('../../images/cricket/${i}.jpg')`;
-    }
-}, 5000);
-
 
 // loader
 document.onreadystatechange = function() {
@@ -60,3 +45,15 @@ document.onreadystatechange = function() {
           "body").style.visibility = "visible";
     }
 };
+
+// localStorage accessing payment details
+let details = JSON.parse(localStorage.getItem('payment'));
+// console.log(details);
+document.querySelector('#day').innerText = details.day; 
+document.querySelector('#book').innerText = details.book; 
+document.querySelector('#amt').innerText = details.amt; 
+
+var amount = (details.amt).match(/\d/g);
+amount = amount.join('');
+let discount = 0.1 * (+(amount));
+document.querySelector('#discount').innerText = `₹${discount}/- (10% discount)`; 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="../css/payment.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- loader -->
+    <div id="loader" class="center"></div>
+        
+    <nav class="nav" id="nav">
+    <a href="index.html"><img src="../images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
+    <div class="nav__link hide">
+        <a href="../../index.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="../html/login.html">Login/SignUp</a>
+        <a href="#book">Booking</a>
+    </div>
+
+
+    <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
+
+    <i class="fa-solid fa-xmark hamIcon" id="hamClose" onclick="toggleHide()" ></i>
+
+    <a id="top__scroll" href="#top">&nbsp;<i class="fa-solid fa-arrow-up"></i>&nbsp;</a>
+    </nav>
+
+
+    <div class="container">
+        <div class="card">
+            <button class="proceed">
+                <svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg>
+            </button>
+            <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
+            
+            <label>Card number :</label>
+            <input id="user" type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121">
+
+            <label>Name :</label>
+            <input class="input name"  placeholder="Jhon Wick">
+
+            <label class="toleft">CVV :</label>
+            <input class="input toleft ccv" placeholder="321">
+        </div>
+
+        <div class="receipt">
+          <div class="col">
+            <p>Cost:</p>
+            <h2 class="cost" id="amt">$400</h2><br>
+            <p>Name:</p>
+            <h2 class="seller">Neetu</h2>
+          </div>
+
+          <div class="col">
+            <p>Package:</p>
+
+            <h3 class="bought-item" id="day">Weekends / Full Day</h3>
+            <p class="bought-items description" id="book">Booking For Full Day</p>
+            <p class="price" id="discount">$200 (10% discount)</p><br>
+          </div>
+
+          <p class="comprobe">This information will be sended to your email</p>
+          
+        </div>
+    </div>
+
+    <!-- footer section starts  -->
+
+  <section class="footer">
+
+    <div class="fbox-container">
+
+
+        <div class="fbox">
+            <h3> Sports Complex </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita veritatis, eaque atque unde quisquam cum a quod asperiores perspiciatis ad eum enim dolorum, laudantium fugit recusandae commodi exercitationem minus!
+            </p>
+            <div class="share">
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-twitter"></a>
+            </div>
+        </div>
+
+        <div class="fbox">
+            <h3>Contact Info</h3>
+            <a class="links link"> <i class="fas fa-phone"></i>+471-456-7890</a>
+            <a class="links link"> <i class="fas fa-phone"></i>+231-578-3333</a>
+            <a class="links link"> <i class="fas fa-envelope"></i>Ayu@gmail.com</a>
+            <a class="links link"> <i class="fas fa-map-marker-alt"></i>India - 110027</a>
+            <a href="./contact.html" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
+        </div>
+
+        <div class="fbox">
+            <h3>Glance</h3>
+            <a href="../index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+            <a href="../html/about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
+            <a href="../html/login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+            <a href="../html/login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
+            <a href="#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> Made with &hearts; by <span> Ayush Pun </span> <br> World Best Sports Complex
+        &copy; 2022, all rights reserved. </div>
+
+</section>
+<!-- footer section ends -->
+
+    <script src="../js/payment.js"></script>
+</body>
+</html>
