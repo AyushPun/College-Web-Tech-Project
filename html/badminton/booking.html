@@ -220,7 +220,7 @@
         <div id="top"></div>
 
         <nav class="nav" id="nav">
-          <a href="index.html"><img src="../../images/logo.gif" id="logo" alt="SportsComplexLOGO"></a>
+          <a href="../../index.html"><img src="../../images/logo.gif" id="logo" alt="SportsComplexLOGO"></a>
           <div class="nav__link hide">
             <a href="../../index.html">Home</a>
             <a href="../about.html">About Us</a>
@@ -347,7 +347,7 @@
 
     <script>
       function payment(e) {
-        if(localStorage.getItem('auth-token').length > 0) {
+        if(localStorage.getItem('auth-token')?.length > 0) {
           // console.log(e.path[2].innerText);
           let str = e.path[2].innerText;
           let arr = str.split('\n');

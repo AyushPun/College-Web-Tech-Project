@@ -454,6 +454,19 @@ animation: flipdown 0.5s ease both;
   flex-direction: column;
 }
 
+.about-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .card-wrapper {
   width: 400px;
   height: 500px;

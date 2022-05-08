@@ -347,7 +347,7 @@
 
     <script>
       function payment(e) {
-        if(localStorage.getItem('auth-token').length > 0) {
+        if(localStorage.getItem('auth-token')?.length > 0) {
           // console.log(e.path[2].innerText);
           let str = e.path[2].innerText;
           let arr = str.split('\n');
