@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../../css/cricket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+        body {
+            background: #0F2027;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        #top {
+            position: absolute;
+            top: 0;
+        }
+
+        /* typewriter */
+        .typewriter {
+          margin-top: 7rem;
+          position: absolute;
+          top: 10%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        
+        .typewriter h1 {
+            color: #fff;
+            width: fit-content;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(30, end),
+                blink-caret .5s step-end infinite;
+        }
+
+        @media (max-width: 768px) {
+          .typewriter h1 {
+            font-size: 3rem;
+          }
+        }
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
+
+
+        /* photo gallery */
+        .img__gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 18rem;
+        }
+
+        .radio-btns {
+            display: grid;
+            max-width: 75%;
+            gap: 10px;
+        }
+
+        .radio-btns div:nth-child(2) {
+          grid-area: 1 / 2 / 3 / 3;
+        }
+
+        .radio-btns div:nth-child(5) {
+          grid-area: 2 / 3 / 4 / 4;
+        }
+        
+        .radio-btns div:nth-child(6) {
+          grid-area: 3 / 1 / 4 / 3;
+        }
+
+        .radio-btns div:nth-child(8) {
+          grid-area: 4 / 2 / 5 / 4;
+        }
+        
+        .radio-btns div:nth-child(9) {
+          grid-area: 6 / 3 / 8 / 4;
+        }
+        
+        .radio-btns div:nth-child(13) {
+          grid-area: 5 / 2 / 7 / 3;
+        }
+
+        .radio-btns:hover .radio-btns__btn:not(:hover) {
+            filter: grayscale(100%);
+        }
+        .radio-btns:hover .radio-btns__btn:not(:hover)::after {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        @media (min-width: 30rem) {
+            .radio-btns {
+                grid-template-columns: repeat(3, 33.33%);
+                grid-template-rows: repeat(6, 250px);
+                justify-content: center;
+            }
+        }
+        .radio-btns__btn {
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .radio-btns__btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            transition: 0.3s;
+        }
+        .radio-btns__btn img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+        .footer {
+            margin-top: 2em;
+            color: white;
+        }
+
+        .footer > i {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+  <!-- loader -->
+  <div id="loader" class="center"></div>
+
+  
+    <header>
+        <nav class="nav" id="nav">
+          <a href="index.html"><img src="../../images/logo.gif" id="logo" alt="SportsComplexLOGO"></a>
+          <div class="nav__link hide">
+            <a href="../../index.html">Home</a>
+            <a href="../about.html">About Us</a>
+            <a href="../../index.html#contact">Contact</a>
+            <a href="../login.html">Login/Signup</a>
+            <a href="./gallery.html">PhotoGallery</a>
+            <a href="./booking.html">Booking</a>
+          </div>
+
+          <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
+
+          <i class="fa-solid fa-xmark hamIcon" id="hamClose" onclick="toggleHide()" ></i>
+        </nav>
+
+        <a id="top__scroll" href="#top">&nbsp;<i class="fa-solid fa-arrow-up"></i>&nbsp;</a>
+
+      </header>
+
+      <div id="top"></div>
+      
+      <div class="typewriter">
+          <h1>Gallery</h1>
+      </div>
+
+      <div class="img__gallery">
+        <div class="radio-btns" role="radiogroup">
+
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image one">
+            <img src="../../images/badminton/gallery/1.jpg" alt="Image description">
+          </div>
+
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image two">
+            <img src="../../images/badminton/gallery/2.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image three">
+            <img src="../../images/badminton/gallery/3.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image four">
+            <img src="../../images/badminton/gallery/4.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image five">
+            <img src="../../images/badminton/gallery/5.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image six">
+            <img src="../../images/badminton/gallery/6.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image seven">
+            <img src="../../images/badminton/gallery/7.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image eight">
+            <img src="../../images/badminton/gallery/8.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/9.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/10.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/11.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/12.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/13.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/14.jpg" alt="Image description">
+          </div>
+          <div class="radio-btns__btn" role="radio" aria-checked="false" tabindex="-1" aria-label="Select image nine">
+            <img src="../../images/badminton/gallery/15.jpg" alt="Image description">
+          </div>
+
+        </div>
+    </div>    
+
+      <!-- footer section starts  -->
+
+  <section class="footer">
+
+    <div class="fbox-container">
+
+
+        <div class="fbox">
+            <h3> Sports Complex </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita veritatis, eaque atque unde quisquam cum a quod asperiores perspiciatis ad eum enim dolorum, laudantium fugit recusandae commodi exercitationem minus!
+            </p>
+            <div class="share">
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-twitter"></a>
+            </div>
+        </div>
+
+        <div class="fbox">
+            <h3>Contact Info</h3>
+            <a class="links link"> <i class="fas fa-phone"></i>+471-456-7890</a>
+            <a class="links link"> <i class="fas fa-phone"></i>+231-578-3333</a>
+            <a class="links link"> <i class="fas fa-envelope"></i>Ayu@gmail.com</a>
+            <a class="links link"> <i class="fas fa-map-marker-alt"></i>India - 110027</a>
+            <a href="../index.html#contact" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
+        </div>
+
+        <div class="fbox">
+            <h3>Glance</h3>
+            <a href="../../index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+            <a href="../about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
+            <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+            <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
+            <a href="../explore.html#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> Made with &hearts; by <span> Ayush Pun </span> <br> World Best Sports Complex
+        &copy; 2022, all rights reserved. </div>
+
+</section>
+<!-- footer section ends -->
+
+
+    <!-- scripting -->
+    <script src="../../js/cricket.js"></script>
+
+</body>
+</html>

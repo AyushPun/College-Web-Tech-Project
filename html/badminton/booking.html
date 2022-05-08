@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../../css/cricket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+        
+        /* header background styling  */
+        header {
+          min-height: 100vh;
+          width: 100%;
+          background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+            url(../../images/booking.jpg);
+          background-position: center;
+          background-size: cover;
+          background-attachment: fixed;
+          position: relative;
+        }
+
+        /* Typewriter styling */
+        .typewriter {
+          margin-top: 7rem;
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        
+        .typewriter h1 {
+            color: #fff;
+            width: fit-content;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(60, end),
+                blink-caret .5s step-end infinite;
+        }
+
+        @media (max-width: 768px) {
+          .typewriter h1 {
+            font-size: 3rem;
+          }
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
+
+        /* booking table  */
+        .booking__container {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-top: 3rem;
+        }
+
+        .responsive-table .table-row{
+          animation: fadeIn 1s ease;
+          animation-fill-mode: both;
+        }
+
+        .responsive-table .table-header{
+          animation: fadeIn 0.5s linear;
+          animation-fill-mode: both;
+          animation-delay: 0.2s;
+        }
+
+        .table-row:nth-child(1) {
+          animation-delay: 0.3s;
+        }
+        .table-row:nth-child(2) {
+          animation-delay: 0.6s;
+        }
+        .table-row:nth-child(3) {
+          animation-delay: 0.9s;
+        }
+        .table-row:nth-child(4) {
+          animation-delay: 1.2s;
+        }
+        .table-row:nth-child(5) {
+          animation-delay: 1.5s;
+        }
+        .table-row:nth-child(6) {
+          animation-delay: 1.8s;
+        }
+        .table-row:nth-child(7) {
+          animation-delay: 2.1s;
+        }
+        .table-row:nth-child(8) {
+          animation-delay: 2.4s;
+        }
+        .table-row:nth-child(9) {
+          animation-delay: 2.7s;
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            top: 100px;
+          }
+            75% {
+              opacity: 0.5;
+              top: 0px;
+          }
+            100% {
+              opacity: 1;
+          }
+        }
+
+        .responsive-table li {
+          border-radius: 3px;
+          padding: 25px 30px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 25px;
+        }
+
+        .responsive-table .table-header {
+          color: white;
+          background-color: #95a5a6;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+        .responsive-table .table-row {
+          background-color: #fff;
+          box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .responsive-table .table-row .col {  
+          font-size: 1.2rem;
+        }
+
+        .responsive-table .col {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .responsive-table .col-1 {
+          flex-basis: 50%;
+        }
+        .responsive-table .col-2 {
+          flex-basis: 50%;
+        }
+        .responsive-table .col-3 {
+          flex-basis: 35%;
+        }
+
+        /* media query */
+        @media all and (max-width: 767px) {
+          .responsive-table .table-header {
+            display: none;
+          }
+          .responsive-table li {
+            display: block;
+          }
+          .responsive-table .col {
+            flex-basis: 100%;
+          }
+          .responsive-table .col {
+            display: flex;
+            padding: 10px 0;
+          }
+          .responsive-table .col:before {
+            color: #6c7a89;
+            padding-right: 10px;
+            content: attr(data-label);
+            flex-basis: 50%;
+            text-align: right;
+          }
+        }
+        
+        /* modal */
+        .btn__book {
+          color: white;
+          background-color: rgb(47, 197, 47);
+          font-size: 1.2rem;
+          padding: 0.6rem 1rem;
+          border-radius: 30px;
+          border: 1px solid rgb(47, 197, 47);
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .btn__book:hover {
+          box-shadow: 3px 5px 8px #8888887c;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- loader -->
+    <div id="loader" class="center"></div>
+    <header>
+
+        <div id="top"></div>
+
+        <nav class="nav" id="nav">
+          <a href="index.html"><img src="../../images/logo.gif" id="logo" alt="SportsComplexLOGO"></a>
+          <div class="nav__link hide">
+            <a href="../../index.html">Home</a>
+            <a href="../about.html">About Us</a>
+            <a href="../../index.html#contact">Contact</a>
+            <a href="../login.html">Login/SignUp</a>
+            <a href="./gallery.html">PhotoGallery</a>
+            <a href="#">Booking</a>
+          </div>
+
+          <i class="fa-solid fa-bars hamIcon" id="hamShow" onclick="toggleHide()"></i>
+
+          <i class="fa-solid fa-xmark hamIcon" id="hamClose" onclick="toggleHide()" ></i>
+        </nav>
+
+        <a id="top__scroll" href="#top">&nbsp;<i class="fa-solid fa-arrow-up"></i>&nbsp;</a>
+      </header>
+
+      <div class="typewriter">
+          <h1>Bookings</h1>
+      </div>
+
+      <div class="booking__container">
+        <ul class="responsive-table">
+
+          <li class="table-header">
+            <div class="col col-1">Days</div>
+            <div class="col col-2">Amount</div>
+            <div class="col col-3">Status</div>
+          </li>
+
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends - Full Day</h2>Booking For Full Day</div>
+            <div class="col col-2">&#8377;28000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends - Evening</h2>Booking For Evening Slot</div>
+            <div class="col col-2">&#8377;9000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends - Afternoon</h2>Booking For Afternoon Slot</div>
+            <div class="col col-2">&#8377;11000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekends - Morning</h2>Booking For Morning Slot</div>
+            <div class="col col-2">&#8377;12000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays - Full Day</h2>Booking For Full Day</div>
+            <div class="col col-2">&#8377;15000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays - Evening</h2>Booking For Evening Slot</div>
+            <div class="col col-2">&#8377;7000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays - Afternoon</h2>Booking For Afternoon Slot</div>
+            <div class="col col-2">&#8377;9000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1"><h2>Weekdays - Morning</h2>Booking For Morning Slot</div>
+            <div class="col col-2">&#8377;10000/-</div>
+            <div class="col col-3"><button class="btn__book" onclick="payment(event)">Book Now</button></div>               
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+
+      <!-- footer section starts  -->
+
+  <section class="footer">
+
+    <div class="fbox-container">
+
+
+        <div class="fbox">
+            <h3> Sports Complex </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita veritatis, eaque atque unde quisquam cum a quod asperiores perspiciatis ad eum enim dolorum, laudantium fugit recusandae commodi exercitationem minus!
+            </p>
+            <div class="share">
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-twitter"></a>
+            </div>
+        </div>
+
+        <div class="fbox">
+            <h3>Contact Info</h3>
+            <a class="links link"> <i class="fas fa-phone"></i>+471-456-7890</a>
+            <a class="links link"> <i class="fas fa-phone"></i>+231-578-3333</a>
+            <a class="links link"> <i class="fas fa-envelope"></i>Ayu@gmail.com</a>
+            <a class="links link"> <i class="fas fa-map-marker-alt"></i>India - 110027</a>
+            <a href="./contact.html" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
+        </div>
+
+        <div class="fbox">
+            <h3>Glance</h3>
+            <a href="../../index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+            <a href="../about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
+            <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+            <a href="../login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
+            <a href="../explore.html#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> Made with &hearts; by <span> Ayush Pun </span> <br> World Best Sports Complex
+        &copy; 2022, all rights reserved. </div>
+
+</section>
+<!-- footer section ends -->
+
+    <!-- scripting -->
+    <script src="../../js/cricket.js"></script>
+
+    <script>
+      function payment(e) {
+        if(localStorage.getItem('auth-token').length > 0) {
+          // console.log(e.path[2].innerText);
+          let str = e.path[2].innerText;
+          let arr = str.split('\n');
+          let obj = {
+            "day" : arr[0],
+            "book" : arr[1],
+            "amt" : arr[2]
+          }
+          // console.log(obj);
+          localStorage.setItem("payment", JSON.stringify(obj));
+          window.open('../payment.html', '_blank');
+        } else {
+          alert("Please Login Yourself");
+          window.location.href = `../login.html`;
+        }
+        
+      }
+    </script>
+
+</body>
+</html>
