@@ -157,9 +157,17 @@ nav {
 }
 
 .text-box p {
-  margin: 10px 0 40px;
-  font-size: 14px;
+  margin: 16px 40px;
+  font-size: 17px;
   color: #fff;
+}
+
+.text-box p span {
+  font-size: 30px;
+}
+
+.text-box p sup {
+  font-size: 13px;
 }
 
 .hero-btn {

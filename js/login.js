@@ -95,7 +95,7 @@ document.onreadystatechange = function() {
                 localStorage.setItem("auth-token", "123456789");
                 alert("Successfully Logged In");
                 setTimeout(() => {
-                    window.location.href = `./cricket/booking.html`;
+                    window.history.back();
                 }, 2000);
             } else {
                 alert("Invalid Credentials");
