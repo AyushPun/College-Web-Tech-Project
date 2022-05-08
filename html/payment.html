@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="../css/payment.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
+<script>
+  function confirmation() {
+    if(document.getElementById('user').value > 0 && document.getElementById('name').value.length > 0 && document.getElementById('cvv').value > 0) {
+      window.location.href="#open-modal";
+    } else {
+      alert("Invalid Input")
+    }
+  }
+</script>
 <body>
     
     <!-- loader -->
     <div id="loader" class="center"></div>
         
     <nav class="nav" id="nav">
-    <a href="index.html"><img src="../images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
+    <a href="index.html"><img src="../images/logo.gif" id="logo" alt="SportsComplexLOGO"></a>
     <div class="nav__link hide">
         <a href="../../index.html">Home</a>
         <a href="#">About Us</a>
@@ -34,20 +44,20 @@
 
     <div class="container">
         <div class="card">
-            <button class="proceed">
+            <button type="submit" class="proceed" onclick="confirmation()">
                 <svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg>
             </button>
             <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
             
             <label>Card number :</label>
-            <input id="user" type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121">
+            <input id="user" type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121" required>
 
             <label>Name :</label>
-            <input class="input name"  placeholder="Jhon Wick">
+            <input type="text" id="name" class="input name"  placeholder="Jhon Wick" required>
 
             <label class="toleft">CVV :</label>
-            <input class="input toleft ccv" placeholder="321">
+            <input id="cvv" class="input toleft ccv" placeholder="321" required>
         </div>
 
         <div class="receipt">
@@ -117,6 +127,18 @@
 
 </section>
 <!-- footer section ends -->
+
+<div id="open-modal" class="modal-window window2">
+  <div>
+      <a href="#" title="Close" onclick="booking()" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
+      <div>
+          <img src="../images/success.gif" alt="mail">
+          <h2>Payment Successful</h2>
+          <h5>Thank you for your payment. We will be in contact with more details shortly</h5>
+          <a href="#" title="Close" onclick="booking()" class="closebtn">Close</a>
+      </div>
+  </div>
+</div>
 
     <script src="../js/payment.js"></script>
 </body>

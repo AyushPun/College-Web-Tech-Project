@@ -8,6 +8,57 @@
     <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('pPjLlGVMRd2_gNVsq');
+        })();
+    </script>
+    <script>
+        function contactMail() {
+            let fname = document.getElementById("fname").value;
+            let msg = document.getElementById("msg").value;
+            let email = document.getElementById("email").value;
+            var tempParams = {
+                from_name: fname,
+                email: email,
+                message: msg
+            };
+            console.log(tempParams);
+            if (fname.length > 0 && msg.length > 0 && email.length > 0) {
+                emailjs.send('service_xqc489n', 'template_qb17l1k', tempParams)
+                    .then(function (res) {
+                        console.log("Success", res.status);
+                    })
+                showThankYou();
+            }
+            else{
+                alert("Invalid Inputs");
+            }
+        }
+
+        function subscribeMail() {
+            let email = document.getElementById("subMail").value;
+            var tempParams = {
+                email: email,
+            };
+            console.log(tempParams);
+            if (email.length > 0) {
+                emailjs.send('service_xqc489n', 'template_4dkw9op', tempParams)
+                    .then(function (res) {
+                        console.log("Success", res.status);
+                    })
+                showThankYou();
+            }
+            else{
+                alert("Invalid Inputs");
+            }
+        }
+    </script>
+
+
 <body>
     
     <!-- loader -->
@@ -36,11 +87,11 @@
                         <small>Enter your email so we can send you the latest updates!</small>
                         <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input type="text" name="email" placeholder="email">
+                            <input type="text" name="email" placeholder="email" id="subMail">
                             <label>e-mail</label>
                         </div>
                         <div class="field-wrapper">
-                            <input type="submit" onclick="showThankYou()">
+                            <input type="submit" onclick="subscribeMail()">
                         </div>
                         </form>
                     </div>
@@ -112,19 +163,19 @@
                         <h2>Contact us</h2>
                         <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input type="text" name="name" placeholder="name">
+                            <input id="fname" type="text" name="name" placeholder="name">
                             <label>Name</label>
                         </div>
                         <div class="field-wrapper">
-                            <input type="text" name="email" placeholder="email">
+                            <input id="email" type="text" name="email" placeholder="email">
                             <label>e-mail</label>
                         </div>
                         <div class="field-wrapper">
-                            <textarea placeholder="your message"></textarea>
+                            <textarea id="msg" placeholder="your message"></textarea>
                             <label>your message</label>
                         </div>
                         <div class="field-wrapper">
-                            <input type="submit" onclick="showThankYou()">
+                            <input  type="submit" onclick="contactMail()">
                         </div>
                         </form>
                     </div>
@@ -174,16 +225,16 @@
             <a class="links link"> <i class="fas fa-phone"></i>+231-578-3333</a>
             <a class="links link"> <i class="fas fa-envelope"></i>Ayu@gmail.com</a>
             <a class="links link"> <i class="fas fa-map-marker-alt"></i>India - 110027</a>
-            <a href="./contact.html" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
+            <a href="../index.html/" class="links link"> <i class="fas fa-address-book"></i>Contact Us</a>
         </div>
 
         <div class="fbox">
             <h3>Glance</h3>
             <a href="../index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
-            <a href="../html/about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
-            <a href="../html/login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
-            <a href="../html/login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
-            <a href="#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
+            <a href="./about.html" class="links"> <i class="fas fa-arrow-right"></i>About Us</a>
+            <a href="./login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+            <a href="./login.html" class="links"> <i class="fas fa-arrow-right"></i>SignUp</a>
+            <a href="./explore.html#book" class="links"> <i class="fas fa-arrow-right"></i>Bookings</a>
         </div>
 
     </div>

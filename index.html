@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Sports Complex</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('pPjLlGVMRd2_gNVsq');
+        })();
+    </script>
+    <script>
+        function sendMail(e) {
+            e.preventDefault();
+            let fname = document.getElementById("fname").value;
+            let msg = document.getElementById("msg").value;
+            let email = document.getElementById("email").value;
+            var tempParams = {
+                from_name: fname,
+                email: email,
+                message: msg
+            };
+            console.log(tempParams);
+            if (fname.length > 0 && msg.length > 0 && email.length > 0) {
+                emailjs.send('service_xqc489n', 'template_qb17l1k', tempParams)
+                    .then(function (res) {
+                        console.log("Success", res.status);
+                    })
+                    window.location.href="#open-modal2";
+            }
+            else{
+                alert("Invalid Inputs");
+            }
+        }
+    </script>
+
 </head>
 <body>
     <!-- loader -->
@@ -15,7 +48,7 @@
         
     <div class="header" id="header">
         <nav>
-            <a href="index.html"><img src="./images/logo.png" id="logo" alt="SportsComplexLOGO"></a>
+            <a href="index.html"><img src="./images/logo.gif" id="logo" alt="SportsComplexLOGO"></a>
             <div class="nav-links" id="nav-links">
                 <i class="fa-solid fa-xmark" id="hamIcon" onclick="toggleHide()"></i>
                 <ul>
@@ -37,7 +70,7 @@
     </div>
    
     <section class="main">
-        <h1>Section</h1>
+        <h1>Atlas Sports Complex</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, perferendis. Soluta quod ad, quaerat maiores perferendis laudantium aspernatur, veritatis voluptate aperiam molestiae accusamus officiis ipsam nostrum cupiditate impedit iure sunt.</p>
     </section>
 
@@ -93,10 +126,10 @@
                         </div>
                         <div class="form-container">
                             <h2>Contact Us</h2>
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email">
-                            <textarea placeholder="Type Your Message Here" name="" id="" cols="30" rows="10"></textarea>
-                            <button type="submit" class="btn btn-grey">Submit</button>
+                            <input type="text" placeholder="Name" id="fname" required>
+                            <input type="email" placeholder="Email" id="email" required>
+                            <textarea placeholder="Type Your Message Here" name="" id="msg" cols="30" rows="10" required></textarea>
+                            <button type="submit" class="btn btn-grey" onclick="sendMail(event)">Submit</button>
                         </div>
                    </div>
             </form>
@@ -153,6 +186,20 @@
 </section>
 <!-- footer section ends -->
 
+<div id="open-modal2" class="modal-window window2">
+    <div>
+        <a href="#" title="Close" onclick="home()" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
+        <div>
+            <img src="/images/loader_gif.gif" alt="mail">
+            <h2>Email Acknowledged</h2>
+            <h5>Thank you for sending us an enquiry, we'll contact you shortly</h5>
+            <a href="#" title="Close" onclick="home()" class="btn closebtn">Close</a>
+        </div>
+    </div>
+</div>
+
     <script src="./js/script.js"></script>
+
+    
 </body>
 </html>

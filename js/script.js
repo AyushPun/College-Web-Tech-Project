@@ -50,3 +50,8 @@ document.onreadystatechange = function() {
           "body").style.visibility = "visible";
     }
 };
+
+//navigate to home
+function home() {
+    window.location.href ="./index.html";
+}

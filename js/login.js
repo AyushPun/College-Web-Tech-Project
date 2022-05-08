@@ -79,6 +79,8 @@ document.onreadystatechange = function() {
         }
     })
 
+    localStorage.setItem("auth-token", "");
+
     // login
     document.getElementById('login').addEventListener('click', () => {
         var email = document.getElementById('login_email').value;
@@ -89,8 +91,12 @@ document.onreadystatechange = function() {
             let users = JSON.parse(localStorage.getItem("users"));
     
             if(users[email] == pass) {
-                alert("Successfully Logged In");
                 showThankYou();
+                localStorage.setItem("auth-token", "123456789");
+                alert("Successfully Logged In");
+                setTimeout(() => {
+                    window.location.href = `./cricket/booking.html`;
+                }, 2000);
             } else {
                 alert("Invalid Credentials");
             }

@@ -119,8 +119,9 @@ nav {
 #logo {
   border-radius: 50px;
   transition: 0.5s;
-  height: 5.6rem;
-  width: 5.6rem;
+  height: 6rem;
+  width: 6rem;
+  margin-left: -10px;
   object-fit: cover;
   object-position: center;
 }
@@ -750,3 +751,96 @@ nav {
   }
 }
 
+
+/* modal */
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+}
+.modal-window.window2 h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal-window.window2 h5{
+  text-align: center;
+  font-weight: 500;
+}
+
+.modal-window.window2 img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.modal-window.window2 h2+a{
+    width: fit-content;
+    display: block;
+    margin:2rem auto;
+    font-size: 1.4rem;
+    text-transform: none;
+    background-color: rgb(79, 79, 79);
+}
+.modal-window.window2 h2+a:hover{
+    background-color: rgb(63, 63, 63);
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  margin-right: -15px;
+}
+.modal-close:hover {
+  color: black;
+}
+.modal-window .btn.closebtn{
+  display: block;
+  width: fit-content;
+  margin:1.5rem auto;
+  background-color:#777;
+  color: white;
+  transition: all 0.4s ease-in-out;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+.modal-window .btn.closebtn:hover{
+  background-color:rgb(68,68,68);
+}
+.modal-window > div {
+  border-radius: 1rem;
+}

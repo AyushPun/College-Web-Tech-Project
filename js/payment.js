@@ -57,3 +57,9 @@ var amount = (details.amt).match(/\d/g);
 amount = amount.join('');
 let discount = 0.1 * (+(amount));
 document.querySelector('#discount').innerText = `₹${discount}/- (10% discount)`; 
+
+
+//navigate to booking page
+function booking() {
+    window.location.href =`./cricket/booking.html`
+}
