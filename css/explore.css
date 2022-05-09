@@ -508,7 +508,6 @@ button:hover{
   height: 500px;
   width: 80%;
   margin: auto;
-  border-radius: 50px;
   /*glassmorphism*/background-color: rgba(255,255,255,0.2);
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   backdrop-filter: blur( 4px );
@@ -519,10 +518,10 @@ button:hover{
   overflow-x: hidden;
 }
 
-.main__card::-webkit-scrollbar-track {
+/* .main__card::-webkit-scrollbar-track {
   margin-top: 40px;
   margin-bottom: 40px;
-}
+} */
 
 .main__card::-webkit-scrollbar {
   width: 8px;

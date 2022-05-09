@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Sports Complex</title>
+    <title>Atlas Sports Complex</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/atlas.png">
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -16,7 +19,7 @@
         })();
     </script>
     <script>
-        function sendMail(e) {
+        function emailConfirmation(e) {
             e.preventDefault();
             let fname = document.getElementById("fname").value;
             let msg = document.getElementById("msg").value;
@@ -32,7 +35,7 @@
                     .then(function (res) {
                         console.log("Success", res.status);
                     })
-                    window.location.href="#open-modal2";
+                    window.location.href="#modal2";
             }
             else{
                 alert("Invalid Inputs");
@@ -62,10 +65,7 @@
 
         <div class="text-box">
             <h1>World's Biggest Sports Complex</h1>
-            <p>Atlas Sports Complex (ASC) was created in 2022 under the provisions of the Delhi Development Act "to promote and secure the development of Delhi". 
-            The motto is to promote sports at all levels of the society and enhance and improve the sports facilities available in the capital city. 
-            ASC also organizes several sports tournaments throughout the year to uplift and nurture the young and hidden talents. </p>
-            
+            <p>ASC is playing a vital role not just in creating a huge network of sports facilities in Delhi, it is also actively identifying and training (schemes) budding sports talent in the city.<br> <br>   Checkout what our sports complex has to offer!</p>
             <a href="./html/explore.html" class="hero-btn">Expore Now &nbsp; &#8594;</a>
         </div>
 
@@ -74,7 +74,9 @@
    
     <section class="main">
         <h1>Atlas Sports Complex</h1>
-        <p>ASC is playing a vital role not just in creating a huge network of sports facilities in Delhi, it is also actively identifying and training (schemes) budding sports talent in the city.<br> <br>   Checkout what our sports complex has to offer!</p>
+        <p>Atlas Sports Complex (ASC) was created in 2022 under the provisions of the Delhi Development Act "to promote and secure the development of Delhi". 
+            The motto is to promote sports at all levels of the society and enhance and improve the sports facilities available in the capital city. 
+            ASC also organizes several sports tournaments throughout the year to uplift and nurture the young and hidden talents. </p>
     </section>
 
     <div class="games__section">
@@ -132,7 +134,7 @@
                             <input type="text" placeholder="Name" id="fname" required>
                             <input type="email" placeholder="Email" id="email" required>
                             <textarea placeholder="Type Your Message Here" name="" id="msg" cols="30" rows="10" required></textarea>
-                            <button type="submit" class="btn btn-grey" onclick="sendMail(event)">Submit</button>
+                            <button type="submit" class="btn btn-grey" onclick="emailConfirmation(event)">Submit</button>
                         </div>
                    </div>
             </form>
@@ -189,7 +191,7 @@
 </section>
 <!-- footer section ends -->
 
-<div id="open-modal2" class="modal-window window2">
+<div id="modal2" class="modal-window window2">
     <div>
         <a href="#" title="Close" onclick="home()" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
         <div>
