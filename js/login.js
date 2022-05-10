@@ -86,11 +86,10 @@ document.onreadystatechange = function() {
         var email = document.getElementById('login_email').value;
         var pass = document.getElementById('login_pass').value;
 
-
         if(email.length >= 4 && pass.length >= 3) { 
             let users = JSON.parse(localStorage.getItem("users"));
-    
-            if(users[email] == pass) {
+
+            if(users != null && users[email] == pass) {
                 showThankYou();
                 localStorage.setItem("auth-token", "123456789");
                 alert("Successfully Logged In");
@@ -100,6 +99,8 @@ document.onreadystatechange = function() {
             } else {
                 alert("Invalid Credentials");
             }
+        } else {
+            alert("Invalid Credentials");
         }
     })
 

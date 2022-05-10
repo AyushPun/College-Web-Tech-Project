@@ -91,7 +91,7 @@
                         <small>Enter your email so we can send you the latest updates!</small>
                         <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input type="text" name="email" placeholder="email" id="subMail">
+                            <input type="text" name="email" placeholder="email" id="subMail" required>
                             <label>e-mail</label>
                         </div>
                         <div class="field-wrapper">
@@ -106,11 +106,11 @@
                         <h2>Sign in</h2>
                         <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input type="text" name="username" placeholder="username" id="login_email">
-                            <label>username</label>
+                            <input type="text" name="username" placeholder="username" id="login_email" required>
+                            <label>email</label>
                         </div>
                         <div class="field-wrapper">
-                            <input type="password" name="password" placeholder="password" autocomplete="new-password" id="login_pass">
+                            <input type="password" name="password" placeholder="password" autocomplete="new-password" id="login_pass" required>
                             <label>password</label>
                         </div>
                         <div class="field-wrapper">
@@ -128,7 +128,7 @@
                         <small>Enter your email so we can send you a reset link for your password</small>
                         <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input type="text" name="email" placeholder="email">
+                            <input type="text" name="email" placeholder="email"required>
                             <label>e-mail</label>
                         </div>
                         <div class="field-wrapper">
@@ -167,15 +167,15 @@
                         <h2>Contact us</h2>
                         <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input id="fname" type="text" name="name" placeholder="name">
+                            <input id="fname" type="text" name="name" placeholder="name" required>
                             <label>Name</label>
                         </div>
                         <div class="field-wrapper">
-                            <input id="email" type="text" name="email" placeholder="email">
+                            <input id="email" type="text" name="email" placeholder="email" required>
                             <label>e-mail</label>
                         </div>
                         <div class="field-wrapper">
-                            <textarea id="msg" placeholder="your message"></textarea>
+                            <textarea id="msg" placeholder="your message" required></textarea>
                             <label>your message</label>
                         </div>
                         <div class="field-wrapper">
